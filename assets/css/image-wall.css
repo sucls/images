@@ -1,0 +1,163 @@
+@charset "UTF-8";
+@import url(base.scss);
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+:root {
+  --repeat-count: 6;
+  --item-width: 1fr;
+  --item-heigth: 1fr;
+  --item-gap: 16px;
+  --min-item-width: 280px;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+}
+body .background {
+  position: fixed;
+  inset: 0;
+  background: #2193b0; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  z-index: -1;
+}
+body main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+body main .nav {
+  width: 124px;
+  display: flex;
+  flex-direction: column;
+}
+body main .nav .logo {
+  width: 100%;
+  height: 120px;
+}
+body main .nav .logo img {
+  object-fit: cover;
+  width: 80%;
+  margin: 0 auto;
+  display: block;
+  filter: drop-shadow(5px 5px 5px #1e58c4);
+}
+body main .nav .style-list {
+  flex: 1;
+  position: relative;
+}
+body main .nav .style-list .style {
+  position: relative;
+  color: aliceblue;
+  letter-spacing: 5px;
+  font-size: 15px;
+}
+body main .nav .style-list .style.active .item span {
+  color: #fff;
+  background-color: #3162ff;
+}
+body main .nav .style-list .style.active .item span:hover {
+  background-color: #4672ff;
+}
+body main .nav .style-list .style.active::before {
+  top: 5px;
+  position: absolute;
+  content: "\ec69";
+  transition: all 0.2s ease-in;
+  color: #3162ff;
+  font-family: remixicon !important;
+  font-style: normal;
+  transform: rotate(90deg) translateY(20px);
+  font-size: 30px;
+}
+body main .nav .style-list .style .item {
+  position: relative;
+  width: 120px;
+  height: 40px;
+  margin-bottom: 26px;
+  overflow: hidden;
+}
+body main .nav .style-list .style .item span {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: right;
+  width: 102px;
+  height: 40px;
+  color: #555;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+  background: #f1f5f7;
+  border-radius: 32px;
+  cursor: pointer;
+}
+body main .nav .style-list .style .item span:hover {
+  background-color: #e5e6ea;
+}
+body main .nav .style-list .style:hover {
+  cursor: pointer;
+}
+body main .container {
+  flex: 1;
+  padding: 20px 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--min-item-width), var(--item-width)));
+  grid-auto-rows: var(--item-heigth);
+  grid-auto-columns: var(--item-width);
+  grid-auto-flow: row;
+  gap: var(--item-gap);
+  justify-content: center;
+  justify-items: center;
+}
+body main .container.photo {
+  gap: 0;
+}
+body main .container.photo .image-item {
+  background: #fff;
+  padding: 15px;
+  border: 1px solid #ddd;
+  box-shadow: 2px 5px 5px #000;
+}
+body main .container.photo .image-item img {
+  border-radius: 0;
+}
+body main .container.love {
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  gap: 0;
+}
+body main .container.love .image-item {
+  height: 120px;
+  border-radius: 0;
+  padding: 8px;
+}
+body main .container.love .image-item img {
+  border-radius: 0;
+}
+body main .container .image-item {
+  height: 300px;
+  width: 100%;
+  border-radius: 15px;
+}
+body main .container .image-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 10% 10%;
+  background-size: cover;
+  border-radius: 15px;
+}
+body main .container .image-item:not(.empty):hover {
+  cursor: pointer;
+  box-shadow: 2px 3px 12px rgba(171, 46, 196, 0.7490196078);
+}/*# sourceMappingURL=image-wall.css.map */

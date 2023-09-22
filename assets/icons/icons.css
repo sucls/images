@@ -1,0 +1,19 @@
+@import url(./remixicon/remixicon.css);
+
+.icon{
+    font-size: 22px;
+
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: baseline;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+}
+
+.icon:hover{
+    cursor: pointer;
+    opacity: 1;
+}

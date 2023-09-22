@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <link rel="stylesheet" href="/assets/css/index.css">
+    <style>
+        @keyframes change-color {
+            0% {
+                --bg-color-deg: 45deg;
+            }
+            25% {
+                --bg-color-deg: 135deg;
+            }
+            50% {
+                --bg-color-deg: 225deg;
+            }
+            75% {
+                --bg-color-deg: 315deg;
+            }
+            100% {
+                --bg-color-deg: 45deg;
+            }
+        }
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        .info{
+            text-align: center;
+            margin: 0 auto;
+            width: fit-content;
+            background-image: -moz-linear-gradient(var(--bg-color-deg),rgb(186, 170, 255), rgb(184, 111, 152), rgb(73, 170, 202));
+            background-image: -webkit-linear-gradient(var(--bg-color-deg),#faa, rgb(184, 111, 152), rgb(73, 170, 202));
+            background-image: linear-gradient(var(--bg-color-deg),rgb(236, 116, 210),rgb(183, 141, 231), rgb(194, 94, 151), rgb(71, 181, 218));
+            background-clip: text;
+            -webkit-background-clip: text;
+            animation: change-color 5s linear infinite;
+            transition: all 5s ease;
+            padding-top: 200px;
+        }
+        .text{
+            font-size: 60px;
+            font-weight: bold;
+            font-style: oblique;
+            color: transparent;
+            letter-spacing: 10px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="info">
+        <a class="text" href="/"> 页面不在了！！ </a>
+    </div>
+</body>
+</html>

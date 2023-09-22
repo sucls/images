@@ -1,0 +1,180 @@
+@charset "UTF-8";
+@import url(base.scss);
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+:root {
+  --item-length: 300px;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+}
+body .background {
+  position: fixed;
+  inset: 0;
+  background: #2193b0; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  z-index: -1;
+}
+body main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+body main .nav {
+  width: 124px;
+  display: flex;
+  flex-direction: column;
+}
+body main .nav .logo {
+  width: 100%;
+  height: 120px;
+}
+body main .nav .logo img {
+  object-fit: cover;
+  width: 80%;
+  margin: 0 auto;
+  display: block;
+  filter: drop-shadow(5px 5px 5px #1e58c4);
+}
+body main .nav .style-list {
+  flex: 1;
+  position: relative;
+}
+body main .nav .style-list .style {
+  position: relative;
+  color: aliceblue;
+  letter-spacing: 5px;
+  font-size: 15px;
+}
+body main .nav .style-list .style.active .item span {
+  color: #fff;
+  background-color: #3162ff;
+}
+body main .nav .style-list .style.active .item span:hover {
+  background-color: #4672ff;
+}
+body main .nav .style-list .style.active::before {
+  top: 5px;
+  position: absolute;
+  content: "\ec69";
+  transition: all 0.2s ease-in;
+  color: #3162ff;
+  font-family: remixicon !important;
+  font-style: normal;
+  transform: rotate(90deg) translateY(20px);
+  font-size: 30px;
+}
+body main .nav .style-list .style .item {
+  position: relative;
+  width: 120px;
+  height: 40px;
+  margin-bottom: 26px;
+  overflow: hidden;
+}
+body main .nav .style-list .style .item span {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: right;
+  width: 102px;
+  height: 40px;
+  color: #555;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+  background: #f1f5f7;
+  border-radius: 32px;
+  cursor: pointer;
+}
+body main .nav .style-list .style .item span:hover {
+  background-color: #e5e6ea;
+}
+body main .nav .style-list .style:hover {
+  cursor: pointer;
+}
+body main .container {
+  flex: 1;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  perspective: 800px;
+  perspective-origin: 50% 100px;
+}
+body main .container .box-shadow {
+  perspective: 800px;
+  -webkit-perspective: 800px;
+  perspective-origin: 50% 100px;
+  -webkit-perspective-origin: 50% 100px;
+}
+body main .container .box-shadow .shadow {
+  position: relative;
+  transform-style: preserve-3d;
+  width: var(--item-length);
+  animation: spin-shadow 45s linear infinite;
+}
+body main .container .box-shadow .shadow > div {
+  box-shadow: 0 0 100px #000;
+  height: 300px;
+  opacity: 0.98;
+  position: absolute;
+  top: 0;
+  transform: rotateX(90deg) translateY(150px);
+  transform-origin: bottom center;
+  width: 300px;
+}
+@keyframes spin-shadow {
+  0% {
+    transform: rotateY(0);
+  }
+  100% {
+    transform: rotateY(1turn);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotateY(0) rotateY(0) rotateZ(0);
+  }
+  100% {
+    transform: rotateX(1turn) rotateY(1turn) rotateZ(1turn);
+  }
+}
+body main .container .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transform-style: preserve-3d;
+  width: var(--item-length);
+  animation: spin 45s linear infinite;
+}
+body main .container .box .image-item {
+  flex: 1 0 auto;
+  height: var(--item-length);
+  width: var(--item-length);
+  position: absolute;
+  background-color: #3e526a;
+  outline: 1px solid #02203c;
+}
+body main .container .box .image-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 10% 10%;
+}
+body main .container .box .image-item:not(.empty):hover {
+  cursor: pointer;
+  box-shadow: 2px 3px 12px rgba(171, 46, 196, 0.7490196078);
+}/*# sourceMappingURL=image-cube.css.map */
