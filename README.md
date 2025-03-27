@@ -199,3 +199,31 @@ js库很多，但不一定需要用到，当然熟悉了原理就是利器，否
 + Single Element CSS Spinners 加载中特性
 + p5.js
 + Babylon.js
+
+### 启动
+
+```bash
+npm start
+```
+
+项目内容
+
+​	实现各种图片的布局展示效果
+
+示例如下：
+
+![首页](./docs/1.png)
+
+![瀑布流布局](./docs/2.png)
+
+![滚动效果](./docs/3.png)
+
+![3D旋转](./docs/4.png)
+
+![照片墙](./docs/5.png)
+
+![翻书效果](./docs/6.png)
+
+![特效轮换](./docs/7.png)
+
+![花样裁剪](./docs/8.png)
